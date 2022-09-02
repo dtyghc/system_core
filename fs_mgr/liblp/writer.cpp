@@ -139,7 +139,7 @@ static bool ValidateAndSerializeMetadata([[maybe_unused]] const IPartitionOpener
             return false;
         }
         if (info.size != block_device.size) {
-            LERROR << "Block device " << partition_name << " size mismatch (expected"
+            LERROR << "Block device " << partition_name << " size is too small (expected"
                    << block_device.size << ", got " << info.size << ")";
             return false;
         }
