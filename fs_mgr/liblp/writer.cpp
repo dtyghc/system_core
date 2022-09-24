@@ -138,7 +138,7 @@ static bool ValidateAndSerializeMetadata([[maybe_unused]] const IPartitionOpener
             PERROR << partition_name << ": ioctl";
             return false;
         }
-        if (info.size != block_device.size) {
+        if (info.size < block_device.size) {
             LERROR << "Block device " << partition_name << " size is too small (expected"
                    << block_device.size << ", got " << info.size << ")";
             return false;
